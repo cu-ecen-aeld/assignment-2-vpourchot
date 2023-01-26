@@ -50,11 +50,11 @@ then
 fi
 
 echo "Removing the old writer utility and compiling as a native application"
-#make clean
+
 cd ~/assignments/assignment2/
 
-rm -f *.o writer;
-
+make clean
+#rm -f *.o writer;
 make writer;
 
 for i in $( seq 1 $NUMFILES)
