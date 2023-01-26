@@ -20,7 +20,6 @@ int main(int augc,char *argv[]) {
                 syslog(LOG_ERR,"Invalid Number of arguments: No Directory Provided %d",augc);
  		return 1;
 	}
-
 	if (!argv[2]){
 		syslog(LOG_ERR,"Invalid Number of arguments: No String Provided %d",augc);
                 return 1;
