@@ -62,7 +62,7 @@ do
 	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
-cd ~/assignment-1-vpourchot/finder-app
+#cd ~/assignment-1-vpourchot/finder-app
 
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
