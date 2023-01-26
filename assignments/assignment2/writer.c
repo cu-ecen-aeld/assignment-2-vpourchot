@@ -14,8 +14,7 @@ int append_str(char *writefile,char *writestr);
 
 int main(int augc,char *argv[]) {
 	openlog(NULL,0,LOG_USER);
-	append_str(arg1,arg2);
-	puts("break0");
+	append_str(argv[1],argv[2]);
 	return 0;
 }
 
@@ -24,9 +23,7 @@ int append_str(char *writefile,char *writestr) {
 	// Append 'Writing $writestr to file'
 	// to newly created file
 	// Write with LOG_DEBUG level
-	
-	puts("Break1");
-	
+		
 	int fp = creat(writefile,0666);
 	if (fp == -1) {
                 syslog(LOG_ERR,"Directory does not exist: %s",writefile);
@@ -39,9 +36,9 @@ int append_str(char *writefile,char *writestr) {
 		return 1;
 	}
 	int fsync (int fp);
-	puts("break2");
+	
 	int close (int fp);
-	puts("break3");
+	
 	syslog(LOG_DEBUG,"Writing %s to %s",writestr,writefile);
 	return 0;
 
