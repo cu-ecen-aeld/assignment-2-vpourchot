@@ -10,10 +10,21 @@
 //Setup syslog logging for your
 //utility using the LOG_USER facility
 
+int check_no_aug(char *writefile,char *writestr);
 int append_str(char *writefile,char *writestr);
 
 int main(int augc,char *argv[]) {
 	openlog(NULL,0,LOG_USER);
+        
+       	if (!argv[1]){
+                syslog(LOG_ERR,"Invalid Number of arguments: No Directory Provided %d",augc);
+ 		return 1;
+	}
+
+	if (!argv[2]){
+		syslog(LOG_ERR,"Invalid Number of arguments: No String Provided %d",augc);
+                return 1;
+	}
 	append_str(argv[1],argv[2]);
 	return 0;
 }
